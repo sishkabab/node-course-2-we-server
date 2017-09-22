@@ -48,11 +48,18 @@ app.get('/about', (re, res) => {
     });
 });
 
-app.get('/bad', (req, res) =>{
+app.get('/bad', (req, res) => {
     res.send({
         code:911,
         message:'Something is fucky!'
     });
+})
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects Page',
+        message: 'Wilkommen to meine project page!!! Domo!'
+    })
 })
 
 app.listen(port, () => {
